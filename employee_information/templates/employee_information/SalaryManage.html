@@ -1,0 +1,67 @@
+{% extends "employee_information/base.html" %} {% block pageContent %}
+<div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
+  <div class="mdc-card py-2">
+    <div class="d-flex justify-content-between align-items-center">
+      <h4 class="card-title mb-0 ">Salary Management </h4>
+    </div>
+  </div>
+</div>
+<div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
+    <div class="mdc-card">
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+          <colgroup>
+            <col width="5%" />
+            <col width="15%" />
+            <col width="20%" />
+            <col width="20%" />
+            <col width="20%" />
+          </colgroup>
+          <thead>
+            <tr>
+                <th class="py-3 px-6 text-left">Name</th>
+                <th class="py-3 px-6 text-left">Department</th>
+                <th class="py-3 px-6 text-left">Position</th>
+                <th class="py-3 px-6 text-left">Salary</th>
+                <th class="py-3 px-6 text-left">Total Given Salary</th>
+            </tr>
+          </thead>
+          <tbody class="m-20">
+            {% for employee in employees %}
+            <tr class=" border-1 border-gray-400">
+                <td class="py-4 px-6">{{ employee.firstname }} {{ employee.middlename }} {{ employee.lastname }}</td>
+                <td class="py-4 px-6">{{ employee.department_id }}</td>
+                <td class="py-4 px-6">{{ employee.position_id }}</td>
+                <td class="py-4 px-6">${{ employee.salary }}</td>
+                <td class="py-4 px-6">${{ employee.salary }}</td>
+            </tr>
+            {% endfor %}
+            <tr class=" border-1 border-gray-400">
+                <td class="py-4 px-6"></td>
+                <td class="py-4 px-6"></td>
+                <td class="py-4 px-6"></td>
+                <td class="py-4 px-6"></td>
+                <td class="py-4 px-6">${{ total.total_salary }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-gray-200 pt-20 ml-40 mr-60 pl-40 pr-40   w-max text-center">
+    <h1 class="text-2xl font-semibold mb-4 p-4 text-white bg-gradient-to-r from-pink-500 to-pink-300">Net Profit From Salary Management</h1>         
+            <h3 class="text-1xl font-semibold text-blue-500 text-left">Total Budget for the Salary : ${{ amount }}</h3>
+            <h3 class="text-1xl font-semibold text-green-500 text-left">Total Given Salary : ${{ total.total_salary }}</h3>
+            <h3 class="text-1xl font-semibold text-yellow-500 text-left">Net Profit : ${{ profit }}</h3>
+       </div>
+
+  {% endblock pageContent %}
+
+<!-- Inside the <head> section of base.html -->
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+
+
+
+
