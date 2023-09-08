@@ -19,29 +19,29 @@
           </colgroup>
           <thead>
             <tr>
-                <th class="py-3 px-6 text-left">Name</th>
-                <th class="py-3 px-6 text-left">Department</th>
-                <th class="py-3 px-6 text-left">Position</th>
-                <th class="py-3 px-6 text-left">Salary</th>
-                <th class="py-3 px-6 text-left">Total Given Salary</th>
+                <th class="py-1 px-2 text-left">Name</th>
+                <th class="py-1 px-2 text-left">Department</th>
+                <th class="py-1 px-2 text-left">Position</th>
+                <th class="py-1 px-2 text-left">Salary</th>
+                <th class="py-1 px-2 text-left">Total Given Salary</th>
             </tr>
           </thead>
           <tbody class="m-20">
             {% for employee in employees %}
             <tr class=" border-1 border-gray-400">
-                <td class="py-4 px-6">{{ employee.firstname }} {{ employee.middlename }} {{ employee.lastname }}</td>
-                <td class="py-4 px-6">{{ employee.department_id }}</td>
-                <td class="py-4 px-6">{{ employee.position_id }}</td>
-                <td class="py-4 px-6">${{ employee.salary }}</td>
-                <td class="py-4 px-6">${{ employee.salary }}</td>
+                <td class="py-1 px-2">{{ employee.firstname }} {{ employee.middlename }} {{ employee.lastname }}</td>
+                <td class="py-1 px-2">{{ employee.department_id }}</td>
+                <td class="py-1 px-2">{{ employee.position_id }}</td>
+                <td class="py-1 px-2">${{ employee.salary }}</td>
+                <td class="py-1 px-2">${{ employee.salary }}</td>
             </tr>
             {% endfor %}
             <tr class=" border-1 border-gray-400">
-                <td class="py-4 px-6"></td>
-                <td class="py-4 px-6"></td>
-                <td class="py-4 px-6"></td>
-                <td class="py-4 px-6"></td>
-                <td class="py-4 px-6">${{ total.total_salary }}</td>
+                <td class="py-2 px-4"></td>
+                <td class="py-2 px-4"></td>
+                <td class="py-2 px-4"></td>
+                <td class="py-2 px-4"></td>
+                <td class="py-2 px-4">${{ total.total_salary }}</td>
             </tr>
           </tbody>
         </table>
